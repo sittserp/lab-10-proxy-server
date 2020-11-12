@@ -28,8 +28,8 @@ function mungeTrails(trailData) {
             summary: item.summary,
             trail_url: item.url,
             conditions: item.conditionStatus,
-            condition_date: item.conditionDate,
-            condition_time: '0:00:00'
+            condition_date: item.conditionDate.substring(0, 10),
+            condition_time: item.conditionDate.substring(11, 19)
         };
     }).slice(0, 10);
 }
