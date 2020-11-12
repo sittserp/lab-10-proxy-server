@@ -34,9 +34,22 @@ function mungeTrails(trailData) {
     }).slice(0, 10);
 }
 
+function mungeRestaurants(restaurantData) {
+    return restaurantData.businesses.map(item => {
+        return {
+            name: item.name,
+            image_url: item.image_url,
+            price: item.price,
+            rating: item.rating,
+            url: item.url
+        };
+    }).slice(0, 21);
+}
+
 module.exports = {
     mungeLocation,
     mungeWeather,
-    mungeTrails
+    mungeTrails,
+    mungeRestaurants
 };
 
